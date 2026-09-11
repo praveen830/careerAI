@@ -1,0 +1,51 @@
+server:
+  port: ${SERVER_PORT:${PORT:8080}}
+
+spring:
+  application:
+    name: careerai-backend
+
+  config:
+    import:
+      - optional:file:.env[.properties]
+      - optional:file:../.env[.properties]
+
+  datasource:
+    url: ${DB_URL:jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:careerai}?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC}
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:Root}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQLDialect
+    open-in-view: false
+
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+# Application Custom Security & CORS Settings
+app:
+  jwt:
+    secret: ${JWT_SECRET:404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970}
+    expiration: ${JWT_EXPIRATION:86400000}
+  cors:
+    allowed-origins: ${CORS_ORIGINS:http://localhost:4200}
+  ai:
+    api-key: ${AI_API_KEY:}
+    provider: ${AI_PROVIDER:gemini}
+    model: ${AI_MODEL:gemini-3.6-flash}
+
+
+# Logging Configuration
+logging:
+  level:
+    root: INFO
+    com.careerai: DEBUG

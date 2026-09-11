@@ -1,0 +1,46 @@
+# Maven build target
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# Sensitive Environment Variable Files
+.env
+.env.*
+!.env.example
+
+# Eclipse
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# Visual Studio Code
+.vscode/
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbattrs.xml
+/build/
+
+# Logs and OS files
+*.log
+.DS_Store
+Thumbs.db
