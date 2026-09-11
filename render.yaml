@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: careerai-backend
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    region: singapore
+    envVars:
+      - key: AI_MODEL
+        value: gemini-flash-latest
+      - key: AI_PROVIDER
+        value: gemini
+      - key: JWT_EXPIRATION
+        value: 86400000
