@@ -14,7 +14,6 @@ spring:
     url: ${DB_URL:jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:careerai}?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC}
     username: ${DB_USERNAME:root}
     password: ${DB_PASSWORD:Root}
-    driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
     hibernate:
